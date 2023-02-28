@@ -7,7 +7,7 @@ function Header() {
     return (
         //  main container of body
         <div id="header">
-            <div className="logo">Komedi</div>
+            <div className="logo">Trio</div>
             <div className="header-menu">
                 <div><Link className="link" to ="/home">Home</Link></div>
                 <div><Link className="link" to ="/tools">Tools</Link></div>

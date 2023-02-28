@@ -26,6 +26,8 @@ const TextWithimg = () => {
     var [xAxis, setXAxis] = React.useState(20);
     var [yAxis, setYAxis] = React.useState(20);
 
+    var [fontSize, setFontSize] = React.useState(20);
+
     var text;
 
     const gernate = () => {
@@ -73,6 +75,10 @@ const TextWithimg = () => {
     const yVal = (e) => {
         setYAxis(e.target.value)
     }
+
+    const fSize = (e) => {
+        setFontSize(e.target.value)
+    }
     //draw text on second canvas
     const drawText = (e) => {
         setMessage(e.target.value);
@@ -83,7 +89,7 @@ const TextWithimg = () => {
 
         //clear react
         ctx1.current.clearRect(0, 0, ctx1.current.canvas.width, ctx1.current.canvas.height);
-        ctx1.current.font = "20px Arial";
+        ctx1.current.font = `${fontSize}px Arial`;
 
         //set limit for text if text is greater than canvas's width
         var maxWidth = cvs1.current.width - 10;
@@ -128,8 +134,10 @@ const TextWithimg = () => {
 
             //live text positon change code here
             ctx1.current = cvs1.current.getContext('2d');
-            ctx1.current.clearRect(0, 0, ctx1.current.canvas.width, ctx1.current.canvas.height);
+            ctx1.current.font = `${fontSize}px Arial`;
 
+            ctx1.current.clearRect(0, 0, ctx1.current.canvas.width, ctx1.current.canvas.height);
+            
             ctx1.current.fillText(message, xAxis, yAxis);
         }
 
@@ -142,7 +150,7 @@ const TextWithimg = () => {
         }
         img.src = src;
 
-    }, [image, message, xAxis, yAxis]);
+    }, [image, message, xAxis, yAxis, fontSize]);
 
     //render() {
     return (
@@ -168,7 +176,7 @@ const TextWithimg = () => {
                         </div>
 
                         {/* text area for draw text */}
-                        <textarea id="txtarea2" maxLength="20" name="message" value={message} onChange={drawText} placeholder="Write your text here..."></textarea>
+                        <textarea id="txtarea2" maxLength="30" name="message" value={message} onChange={drawText} placeholder="Write your text here..."></textarea>
 
                     </div>
                     {/* X and Y coordinate Section */}
@@ -177,6 +185,8 @@ const TextWithimg = () => {
                         <input type="number"  placeholder="X" value={xAxis} onChange={xVal} />
                         <span>Y : </span>
                         <input type="number" placeholder="y" value={yAxis} onChange={yVal} />
+                        <span>Font Size : </span>
+                        <input type="number" placeholder="font-size" value={fontSize} onChange={fSize} />
                     </div> 
                     {/* button section  */}
                     <div className="buttonsction">

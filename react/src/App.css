@@ -250,6 +250,11 @@ html, body{
   /* align-items: center; */
 }
 
+#header .logo{
+  font-size: 25px;
+  margin-left: 20px;
+}
+
 #header .header-menu div{
   padding-right: 15px;
 }
@@ -612,7 +617,7 @@ html, body{
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  width: 50%;
+  width: 70%;
   margin-top: 30px;
 }
 

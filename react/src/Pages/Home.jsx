@@ -4,7 +4,7 @@ import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Topheader from '../Components/Topheader';
-
+import home from "../Images/home.jpg";
 function Home() {
 
     return (
@@ -14,8 +14,7 @@ function Home() {
         <Header/>
         <div id="homePageContainer">  
            <div className="homeMainPage">
-            <img src="https://media.istockphoto.com/id/1401460590/photo/businessman-working-on-laptop-with-document-management-icon.jpg?b=1&s=170667a&w=0&k=20&c=4H439mT0eE_ltwbhV6MNmDNnkyzIVM-D1DQ3qvbI6eE=" alt=""/>          
-         
+            <img src={home} alt="" />         
             <div id="webFeatures">
                 
             </div>
